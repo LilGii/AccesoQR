@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asignar Puestos</title>
+    <link rel="stylesheet" href="/Aplicacionesmoviles/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body class="body-admin">
+    <div class="glass-panel">
+        <img src="/Aplicacionesmoviles/img/Logo.png" class="logo" alt="Logo">
+        <h2>Asignar Puesto</h2>
+
+        <!-- Selección de usuario -->
+        <div class="contenedor-barra">
+            <select id="usuarioSelect" class="barra-desplegable">
+                <option value="">Selecciona un usuario</option>
+            </select>
+        </div>
+
+        <!-- Información del usuario -->
+        <p id="infoUsuario"></p>
+
+        <!-- Lista desplegable para los puestos -->
+        <div class="contenedor-barra">
+            <select id="puestoSelect" class="barra-desplegable">
+                <option value="">Selecciona un puesto</option>
+                <option value="Trabajador">Trabajador</option>
+                <option value="Administrativos">Administrativos</option>
+                <option value="Jefe de Area">Jefe de Área</option>
+                <option value="Gerente">Gerente</option>
+            </select>
+        </div>
+
+        <button class="glass-button" onclick="actualizarPuesto()">Actualizar Puesto</button>
+        <button class="glass-button-regresar" onclick="window.location.href='/Aplicacionesmoviles/Administrador/InicioAd.html'">
+            <br><br><br>
+            <i class="fa-solid fa-arrow-left"></i> Regresar
+        </button>
+    </div>
+
+    <script type="module" src="Asignar_puesto.js"></script>
+</body>
+</html>

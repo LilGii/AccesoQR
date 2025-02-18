@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historial de Asistencia</title>
+    <link rel="stylesheet" href="/Aplicacionesmoviles/styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body class="body-admin">
+    <div class="historial-glass-panel">
+        <!-- Botón de regreso -->
+        <button class="boton-regresar" onclick="window.history.back();">
+            <i class="fa-solid fa-arrow-left"></i> Regresar
+        </button>
+
+        <h2 style="color:white;">Historial</h2>
+
+        <!-- Contenedor de filtros -->
+        <div class="historial-filtros">
+            <label for="filtroTrabajador">Filtrar:</label>
+            <select id="filtroTrabajador" class="barra-desplegable">
+                <option value="">Por trabajador</option>
+            </select>
+
+            <input type="date" id="filtroFecha" class="barra-desplegable-historial" style="color: white;">
+            <button class="historial-glass-button" onclick="filtrarHistorial()">Filtrar</button>
+        </div>
+
+        <!-- Tabla de historial -->
+        <div class="historial-tabla-container">
+            <table id="tablaHistorial">
+                <thead>
+                    <tr>
+                        <th>Trabajador</th>
+                        <th>Puesto</th>
+                        <th>Fecha</th>
+                        <th>Entrada</th>
+                        <th>Salida</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Aquí se insertarán los registros desde Firebase -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script type="module" src="historial.js"></script>
+</body>
+</html>

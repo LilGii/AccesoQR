@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión Admin</title>
+    <link rel="stylesheet" href="/Aplicacionesmoviles/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body class="body-admin">
+    <div class="glass-panel">
+        <img src="/Aplicacionesmoviles/img/Logo.png" class="logo" alt="Logo">
+        <p>Iniciar Sesión Administrador</p>
+
+        <label class="glass-container">
+            <input type="text" id="usuario" placeholder="Usuario" required>
+        </label>
+
+        <label class="glass-container">
+            <input type="password" id="contrasena" placeholder="Contraseña" required>
+        </label>
+
+        <button class="glass-button" onclick="iniciarSesion()">Iniciar Sesión</button> 
+        <button class="glass-button-regresar" onclick="window.location.href='/Aplicacionesmoviles/index.html'">
+            <i class="fa-solid fa-arrow-left"></i> Regresar
+        </button>
+    </div>
+
+    <script type="module" src="sesionAd.js"></script>
+</body>
+</html>

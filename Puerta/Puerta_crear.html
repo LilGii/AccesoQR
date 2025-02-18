@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Puerta</title>
+    <link rel="stylesheet" href="/Aplicacionesmoviles/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body class="body-puerta">
+    <div class="glass-panel">
+        <img src="/Aplicacionesmoviles/img/Logo.png" class="logo" alt="Logo">
+        <p>Registra una nueva Puerta</p>
+        <label class="glass-container">
+            <input type="text" id="nombre" placeholder="Nombre" required>
+        </label>
+        <label class="glass-container">
+            <input type="text" id="ubicacion" placeholder="Ubicación" required>
+        </label>
+        <label class="glass-container">
+            <input type="password" id="contrasena" placeholder="Contraseña (Máximo 10 caracteres)" required maxlength="10">
+        </label>
+        <button class="glass-button" onclick="crearPuerta()">Crear puerta</button> 
+        <button class="glass-button-regresar" onclick="window.location.href='/Aplicacionesmoviles/Administrador/InicioAd.html'">
+            <br><br><br>
+            <i class="fa-solid fa-arrow-left"></i> Regresar
+        </button>
+    </div>
+
+    <script type="module" src="Puerta_crear.js"></script>
+</body>
+</html>
