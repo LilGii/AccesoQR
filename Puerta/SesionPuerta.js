@@ -47,7 +47,7 @@ window.iniciarSesion = function () {
                 localStorage.setItem("puertaActiva", nombre);
 
                 // Redirigir a Lector.html
-                window.location.href = "/Aplicacionesmoviles/Lector/Lector.html";
+                window.location.href = "https://acceso-qr.vercel.app/Lector/Lector.html";
             } else {
                 alert("Contraseña incorrecta.");
             }

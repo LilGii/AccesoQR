@@ -69,7 +69,7 @@ window.registrarUsuario = function () {
                 puesto: 'Trabajador'
             }).then(() => {
                 alert("Usuario registrado con éxito.");
-                window.location.href = "/Aplicacionesmoviles/Iniciar_Sesion/sesion.html";
+                window.location.href = "https://acceso-qr.vercel.app/Iniciar_Sesion/sesion.html";
             }).catch((error) => {
                 alert("Error al registrar: " + error.message);
             });

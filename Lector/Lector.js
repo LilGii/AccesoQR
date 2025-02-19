@@ -73,7 +73,7 @@ async function procesarRegistro(matricula, puesto) {
     
     if (!snapshot.exists()) {
         resultadoDiv.innerHTML = `<i class="fa-solid fa-circle-xmark iconopuerta"></i><br> Usuario no encontrado`;
-        await playSound("/Aplicacionesmoviles/sounds/Denegado.mp3");
+        await playSound("https://acceso-qr.vercel.app/sounds/Denegado.mp3");
         startCamera();
         return;
     }
@@ -81,7 +81,7 @@ async function procesarRegistro(matricula, puesto) {
     const usuario = snapshot.val();
     if (usuario.puesto !== puesto) {
         resultadoDiv.innerHTML = `<i class="fa-solid fa-circle-xmark iconopuerta"></i><br> QR Incorrecto Actualice QR`;
-        await playSound("/Aplicacionesmoviles/sounds/Denegado.mp3");
+        await playSound("https://acceso-qr.vercel.app/sounds/Denegado.mp3");
         startCamera();
         return;
     }
@@ -104,7 +104,7 @@ async function procesarRegistro(matricula, puesto) {
         await push(salidaRef, { Fecha: fechaActual, Hora: "No registrada" });
         video.style.display = "none";
         resultadoDiv.innerHTML = `<i class="fa-solid fa-circle-check iconopuerta"></i><br>Entrada registrada`;
-        await playSound("/Aplicacionesmoviles/sounds/Acceso.mp3");
+        await playSound("https://acceso-qr.vercel.app/sounds/Acceso.mp3");
     } else {
         const salidaActual = salidaSnapshot.exists() ? Object.values(salidaSnapshot.val()).find(s => s.Fecha === fechaActual) : null;
 
@@ -116,11 +116,11 @@ async function procesarRegistro(matricula, puesto) {
             });
             video.style.display = "none"; // Ocultar la cámara
             resultadoDiv.innerHTML = `<i class="fa-solid fa-circle-check iconopuerta"></i><br> Salida registrada`;
-            await playSound("/Aplicacionesmoviles/sounds/Acceso.mp3");
+            await playSound("https://acceso-qr.vercel.app/sounds/Acceso.mp3");
         } else {
             video.style.display = "none"; // Ocultar la cámara
             resultadoDiv.innerHTML = `<i class="fa-solid fa-circle-xmark iconopuerta"></i><br> Ya se registró la salida hoy`;
-            await playSound("/Aplicacionesmoviles/sounds/Denegado.mp3");
+            await playSound("https://acceso-qr.vercel.app/sounds/Denegado.mp3");
         }
     }
     
