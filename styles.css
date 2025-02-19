@@ -7,7 +7,7 @@ html, body {
     align-items: center;
 }
 .body-inicio {
-    background-image: url('/Aplicacionesmoviles/img/9.svg');
+    background-image: url('https://acceso-qr.vercel.app/img/9.svg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -15,7 +15,7 @@ html, body {
     text-align: center;
 }
 .body-sesion{
-    background-image: url('/Aplicacionesmoviles/img/2.svg');
+    background-image: url('https://acceso-qr.vercel.app/img/2.svg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -23,7 +23,7 @@ html, body {
     text-align: center;
 }
 .body-registro{
-    background-image: url('/Aplicacionesmoviles/img/3.svg');
+    background-image: url('https://acceso-qr.vercel.app/img/3.svg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -31,7 +31,7 @@ html, body {
     text-align: center;
 }
 .body-datos{
-    background-image: url('/Aplicacionesmoviles/img/4.svg');
+    background-image: url('https://acceso-qr.vercel.app/img/4.svg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -39,7 +39,7 @@ html, body {
     text-align: center;
 }
 .body-camara{
-    background-image: url('/Aplicacionesmoviles/img/9.svg');
+    background-image: url('https://acceso-qr.vercel.app/img/9.svg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -47,7 +47,7 @@ html, body {
     text-align: center;
 }
 .body-puerta{
-    background-image: url('/Aplicacionesmoviles/img/6.svg');
+    background-image: url('https://acceso-qr.vercel.app/img/6.svg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -55,7 +55,7 @@ html, body {
     text-align: center;
 }
 .body-admin{
-    background-image: url('/Aplicacionesmoviles/img/5.svg');
+    background-image: url('https://acceso-qr.vercel.app/img/5.svg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
