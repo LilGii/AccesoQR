@@ -19,7 +19,7 @@ const database = getDatabase(app);
 
 // Verificar si hay una sesión activa
 if (localStorage.getItem("admin") === "true") {
-    window.location.href = "InicioAd.html"; // Redirige si ya está logueado
+    window.location.href = "https://acceso-qr.vercel.app/Aministrador/InicioAd.html"; // Redirige si ya está logueado
 }
 
 window.iniciarSesion = function () {
@@ -51,7 +51,7 @@ window.iniciarSesion = function () {
                 localStorage.setItem("admin", "true");
 
                 // Redirigir a InicioAd.html
-                window.location.href = "InicioAd.html";
+                window.location.href = "https://acceso-qr.vercel.app/Aministrador/InicioAd.html";
             } else {
                 alert("Contraseña incorrecta.");
             }
