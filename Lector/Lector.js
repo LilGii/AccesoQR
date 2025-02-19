@@ -128,7 +128,7 @@ async function procesarRegistro(matricula, puesto) {
         resultadoDiv.innerHTML = `<div class="icons8-lock"></div><p>Escaneando...</p>`;
         video.style.display = "block"; // Volver a mostrar la cámara
         startCamera();
-    }, 3000); // Mostrar la cámara después de 3 segundos
+    }, 0); // Mostrar la cámara después de 3 segundos
 }
 
 
