@@ -8,49 +8,18 @@
   <script src="https://unpkg.com/jsqr/dist/jsQR.js"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://acceso-qr.vercel.app/styles.css">
+  <!--<script defer src="Lector.js"></script>-->
   <script type="module" src="Lector.js"></script>
-  <style>
-    /* Estilos adicionales para posicionar el botón sobre la cámara */
-    .contenedor-camara {
-      position: relative;
-      width: 100%;
-      height: auto;
-    }
-    .boton-camara {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background-color: rgba(255, 255, 255, 0.7);
-      border: none;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      z-index: 10;
-    }
-    .boton-camara i {
-      font-size: 20px;
-      color: #000;
-    }
-  </style>
 </head>
 <body class="body-camara">
   <div>
     <!-- Icono de regresar al inicio -->
     <a href="https://acceso-qr.vercel.app/index.html">
       <i class="fa-regular fa-circle-xmark icono-casa"></i>
+      </i>
     </a>
     <h2 class="lector-text">Escanea el código QR</h2>
-    <!-- Contenedor para la cámara y el botón de cambiar cámara -->
-    <div class="contenedor-camara">
-      <video id="video" width="100%" height="auto" class="video"></video>
-      <button id="cambiarCamara" class="boton-camara">
-        <i class="fas fa-camera"></i>
-      </button>
-    </div>
+    <video id="video" width="100%" height="auto" class="video"></video>
     <canvas id="canvas" style="display:none;"></canvas>
     <div id="resultado" class="resultado"></div>
   </div>

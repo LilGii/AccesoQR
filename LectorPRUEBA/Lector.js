@@ -19,12 +19,21 @@ const video = document.getElementById('video');
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 const resultadoDiv = document.getElementById('resultado');
+const cambiarCamaraBtn = document.getElementById('cambiarCamara');
 
 let stream;
+let usarCamaraFrontal = false;
 
 function startCamera() {
-    navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } })
+    const constraints = {
+        video: { facingMode: usarCamaraFrontal ? "user" : "environment" }
+    };
+
+    navigator.mediaDevices.getUserMedia(constraints)
         .then(newStream => {
+            if (stream) {
+                stream.getTracks().forEach(track => track.stop());
+            }
             stream = newStream;
             video.srcObject = stream;
             video.setAttribute('playsinline', true);
@@ -34,6 +43,7 @@ function startCamera() {
         })
         .catch(err => {
             console.error('Error accediendo a la cámara: ', err);
+            resultadoDiv.innerHTML = `<p>Error al acceder a la cámara. Asegúrate de permitir el acceso.</p>`;
         });
 }
 
@@ -41,7 +51,7 @@ function playSound(soundPath) {
     return new Promise(resolve => {
         const audio = new Audio(soundPath);
         audio.play();
-        audio.onended = resolve; // Espera a que termine el sonido antes de continuar
+        audio.onended = resolve;
     });
 }
 
@@ -50,10 +60,10 @@ function scanQRCode() {
         canvas.width = video.videoWidth;
         canvas.height = video.videoHeight;
         ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-    
+
         const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
         const code = jsQR(imageData.data, canvas.width, canvas.height);
-    
+
         if (code && code.data.trim() !== "") {
             const qrData = JSON.parse(code.data);
             procesarRegistro(qrData.matricula, qrData.puesto);
@@ -70,7 +80,7 @@ function scanQRCode() {
 async function procesarRegistro(matricula, puesto) {
     const userRef = ref(database, `usuarios/${matricula}`);
     const snapshot = await get(userRef);
-    
+
     if (!snapshot.exists()) {
         resultadoDiv.innerHTML = `<i class="fa-solid fa-circle-xmark iconopuerta"></i><br> Usuario no encontrado`;
         await playSound("https://acceso-qr.vercel.app/sounds/Denegado.mp3");
@@ -92,10 +102,10 @@ async function procesarRegistro(matricula, puesto) {
 
     const entradaRef = ref(database, `usuarios/${matricula}/Registro/Entrada`);
     const salidaRef = ref(database, `usuarios/${matricula}/Registro/Salida`);
-    
+
     const entradaSnapshot = await get(entradaRef);
     const salidaSnapshot = await get(salidaRef);
-    
+
     const ultimaEntrada = entradaSnapshot.exists() ? Object.values(entradaSnapshot.val()).pop() : null;
     const ultimaSalida = salidaSnapshot.exists() ? Object.values(salidaSnapshot.val()).pop() : null;
 
@@ -114,22 +124,27 @@ async function procesarRegistro(matricula, puesto) {
                 Fecha: fechaActual,
                 Hora: horaActual
             });
-            video.style.display = "none"; // Ocultar la cámara
+            video.style.display = "none";
             resultadoDiv.innerHTML = `<i class="fa-solid fa-circle-check iconopuerta"></i><br> Salida registrada`;
             await playSound("https://acceso-qr.vercel.app/sounds/Acceso.mp3");
         } else {
-            video.style.display = "none"; // Ocultar la cámara
+            video.style.display = "none";
             resultadoDiv.innerHTML = `<i class="fa-solid fa-circle-xmark iconopuerta"></i><br> Ya se registró la salida hoy`;
             await playSound("https://acceso-qr.vercel.app/sounds/Denegado.mp3");
         }
     }
-    
+
     setTimeout(() => {
         resultadoDiv.innerHTML = `<div class="icons8-lock"></div><p>Escaneando...</p>`;
-        video.style.display = "block"; // Volver a mostrar la cámara
+        video.style.display = "block";
         startCamera();
-    }, 0); // Mostrar la cámara después de 3 segundos
+    }, 0);
 }
 
+// Evento para cambiar la cámara
+cambiarCamaraBtn.addEventListener('click', () => {
+    usarCamaraFrontal = !usarCamaraFrontal;
+    startCamera();
+});
 
 startCamera();
