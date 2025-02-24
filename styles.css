@@ -350,6 +350,7 @@ padding: 10px;
     width: 100%;
     overflow-x: auto;
     margin-top: 15px;
+    -webkit-overflow-scrolling: touch; /* Mejora el desplazamiento en dispositivos táctiles */
 }
 
 table {
@@ -359,16 +360,19 @@ table {
     border-radius: 10px;
     overflow: hidden;
     color: white;
+    min-width: 600px; /* Establece un ancho mínimo para la tabla */
 }
 
 th, td {
-    padding: 20px; /* Aumenta el padding para hacer la tabla más grande */
+    padding: 12px; /* Ajusta el padding para dispositivos móviles */
     text-align: center;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
 }
 
 th {
     background: rgba(0, 0, 0, 0.297);
+    font-weight: bold;
 }
 
 /* Responsividad */
@@ -389,8 +393,15 @@ th {
     table {
         font-size: 14px;
     }
-}
 
+    th, td {
+        padding: 8px; /* Reduce el padding en dispositivos móviles */
+    }
+
+    .historial-tabla-container {
+        overflow-x: scroll; /* Asegura que la tabla sea desplazable horizontalmente */
+    }
+}
 .boton-regresar {
     position: absolute;
     top: 10px;
