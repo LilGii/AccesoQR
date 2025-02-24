@@ -372,7 +372,29 @@ th {
     background: rgba(0, 0, 0, 0.297);
     font-weight: bold;
 }
+.boton-regresar {
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    background: rgba(0, 0, 0, 0.297);
+    border: none;
+    color: white;
+    font-size: 16px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s;
+}
 
+.boton-regresar i {
+    margin-right: 5px;
+}
+
+.boton-regresar:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
 /* Responsividad */
 @media (max-width: 768px) {
     .historial-glass-panel {
@@ -402,28 +424,12 @@ th {
         font-size: 14px; /* Tamaño de fuente más pequeño para los filtros */
         padding: 8px; /* Reducimos el padding */
     }
-}
-.boton-regresar {
-    position: absolute;
-    top: 10px;
-    right: 30px;
-    background: rgba(0, 0, 0, 0.297);
-    border: none;
-    color: white;
-    font-size: 16px;
-    padding: 10px 15px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    transition: background 0.3s;
+    .boton-regresar {
+        top: 10px;
+        right: 30px;
+        font-size: 10px;
+        
+    }
 }
 
-.boton-regresar i {
-    margin-right: 5px;
-}
-
-.boton-regresar:hover {
-    background: rgba(255, 255, 255, 0.4);
-}
 
