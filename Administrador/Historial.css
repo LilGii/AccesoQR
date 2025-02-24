@@ -1,13 +1,16 @@
-/* Estilos generales */
-body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
-    backdrop-filter: blur(10px);
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+.body-admin{
+    background-image: url('https://acceso-qr.vercel.app/img/5.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    text-align: center;
+}
+.logo {
+    width: 30%;
+    height: auto;
+    max-width: 100%;
+    margin-bottom: 0px; /* Espacio entre el logo y los botones */
 }
 
 /* Contenedor Glassmorphism */
