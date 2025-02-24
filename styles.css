@@ -398,7 +398,7 @@ th {
 /* Responsividad */
 @media (max-width: 768px) {
     .historial-glass-panel {
-        width: 95%;
+        width: 90%;
     }
 
     .historial-filtros {
