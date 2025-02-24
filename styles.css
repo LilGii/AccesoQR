@@ -374,7 +374,7 @@ th {
 }
 
 /* Responsividad */
-@media (max-width: 350px) {
+@media (max-width: 768px) {
     .historial-glass-panel {
         width: 95%;
     }
@@ -388,43 +388,21 @@ th {
         width: 100%;
     }
 
-    /* Hacemos que la tabla sea más responsiva en móviles */
-    table, thead, tbody, th, td, tr {
-        display: block; /* Convertimos la tabla en un bloque para apilar las celdas */
+    /* Ajustes para la tabla en móviles */
+    table {
+        font-size: 12px; /* Reducimos el tamaño de la fuente */
     }
 
-    thead tr {
-        position: absolute;
-        top: -9999px;
-        left: -9999px; /* Ocultamos el encabezado en móviles */
+    th, td {
+        padding: 8px; /* Reducimos el padding para optimizar el espacio */
     }
 
-    tr {
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        margin-bottom: 10px; /* Espacio entre filas */
-    }
-
-    td {
-        border: none;
-        position: relative;
-        padding-left: 50%; /* Espacio para el texto de la celda */
-        text-align: left;
-    }
-
-    td:before {
-        position: absolute;
-        left: 10px;
-        width: 45%;
-        padding-right: 10px;
-        white-space: nowrap;
-        content: attr(data-label); /* Usamos el atributo data-label para mostrar el nombre de la columna */
-        font-weight: bold;
+    /* Ajustamos el tamaño de los botones y filtros en móviles */
+    .barra-desplegable, .barra-desplegable-historial, .historial-glass-button {
+        font-size: 14px; /* Tamaño de fuente más pequeño para los filtros */
+        padding: 8px; /* Reducimos el padding */
     }
 }
-
-
-
-
 .boton-regresar {
     position: absolute;
     top: 10px;
