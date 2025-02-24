@@ -348,7 +348,7 @@ padding: 10px;
 /* Historial - Tabla responsive */
 .historial-tabla-container {
     width: 100%;
-    overflow-x: auto;
+    overflow-x: auto; /* Permite el desplazamiento horizontal si la tabla es muy ancha */
     margin-top: 15px;
     -webkit-overflow-scrolling: touch; /* Mejora el desplazamiento en dispositivos táctiles */
 }
@@ -360,14 +360,12 @@ table {
     border-radius: 10px;
     overflow: hidden;
     color: white;
-    min-width: 600px; /* Establece un ancho mínimo para la tabla */
 }
 
 th, td {
-    padding: 12px; /* Ajusta el padding para dispositivos móviles */
+    padding: 12px;
     text-align: center;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
 }
 
 th {
@@ -380,7 +378,7 @@ th {
     .historial-glass-panel {
         width: 95%;
     }
-    
+
     .historial-filtros {
         flex-direction: column;
         gap: 5px;
@@ -390,18 +388,43 @@ th {
         width: 100%;
     }
 
-    table {
-        font-size: 14px;
+    /* Hacemos que la tabla sea más responsiva en móviles */
+    table, thead, tbody, th, td, tr {
+        display: block; /* Convertimos la tabla en un bloque para apilar las celdas */
     }
 
-    th, td {
-        padding: 8px; /* Reduce el padding en dispositivos móviles */
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px; /* Ocultamos el encabezado en móviles */
     }
 
-    .historial-tabla-container {
-        overflow-x: scroll; /* Asegura que la tabla sea desplazable horizontalmente */
+    tr {
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        margin-bottom: 10px; /* Espacio entre filas */
+    }
+
+    td {
+        border: none;
+        position: relative;
+        padding-left: 50%; /* Espacio para el texto de la celda */
+        text-align: left;
+    }
+
+    td:before {
+        position: absolute;
+        left: 10px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        content: attr(data-label); /* Usamos el atributo data-label para mostrar el nombre de la columna */
+        font-weight: bold;
     }
 }
+
+
+
+
 .boton-regresar {
     position: absolute;
     top: 10px;
