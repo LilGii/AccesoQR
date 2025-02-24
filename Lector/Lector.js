@@ -43,6 +43,7 @@ function startCamera() {
         })
         .catch(err => {
             console.error('Error accediendo a la cámara: ', err);
+            resultadoDiv.innerHTML = `<p>Error al acceder a la cámara. Asegúrate de permitir el acceso.</p>`;
         });
 }
 
