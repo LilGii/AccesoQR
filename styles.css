@@ -374,7 +374,7 @@ th {
 }
 
 /* Responsividad */
-@media (max-width: 768px) {
+@media (max-width: 350px) {
     .historial-glass-panel {
         width: 95%;
     }
